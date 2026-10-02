@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Késia Gomes | Nutricionista · @nutricomk</title>
+  <meta name="description"
+    content="Nutrição com ciência e acompanhamento individual. Agende sua consulta com a Késia Gomes.">
+  <meta name="theme-color" content="#1F3D36">
+  <!-- TROCAR: coloque o link real da página -->
+  <meta property="og:title" content="Késia Gomes | Nutricionista">
+  <meta property="og:description" content="Agende sua consulta e acesse conteúdos de nutrição.">
+  <meta property="og:type" content="website">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%231F3D36'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial' font-weight='700' text-anchor='middle' fill='%23fff'%3EK%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark: #1F3D36;
+      --dark2: #16302A;
+      --green: #3F7D5B;
+      --must: #D98E1F;
+      --berry: #A83A66;
+      --paper: #EEF3EC;
+      --mint: #BFD9CC;
+      --white: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+      color: var(--white);
+      background: var(--dark2);
+      background-image:
+        radial-gradient(ellipse 120% 60% at 50% -10%, rgba(63, 125, 91, .55), transparent 70%),
+        linear-gradient(180deg, var(--dark) 0%, var(--dark2) 100%);
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      padding: max(32px, env(safe-area-inset-top)) 20px max(28px, env(safe-area-inset-bottom));
+    }
+
+    main {
+      width: 100%;
+      max-width: 460px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center
+    }
+
+    .avatar {
+      position: relative;
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      border: 3px solid var(--must);
+      padding: 4px;
+      margin-bottom: 18px;
+      background: var(--dark);
+    }
+
+    .avatar-in {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--green);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 48px;
+      color: var(--white);
+    }
+
+    .avatar-in img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      line-height: 1.2
+    }
+
+    .role {
+      margin-top: 6px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--mint)
+    }
+
+    .handle {
+      margin-top: 2px;
+      font-size: 14px;
+      color: var(--mint);
+      opacity: .8
+    }
+
+    .tagline {
+      margin-top: 16px;
+      max-width: 34ch;
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--paper)
+    }
+
+    nav {
+      width: 100%;
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      min-height: 64px;
+      padding: 14px 18px;
+      border-radius: 18px;
+      text-decoration: none;
+      text-align: left;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .18);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, .14);
+      border-color: rgba(255, 255, 255, .32)
+    }
+
+    .btn:active {
+      transform: translateY(0)
+    }
+
+    .btn:focus-visible {
+      outline: 3px solid var(--must);
+      outline-offset: 3px
+    }
+
+    .btn svg.ic {
+      flex: none;
+      width: 26px;
+      height: 26px
+    }
+
+    .btn .txt {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.3
+    }
+
+    .btn small {
+      font-size: 12.5px;
+      font-weight: 400;
+      color: var(--mint);
+      margin-top: 1px
+    }
+
+    .btn svg.go {
+      flex: none;
+      width: 18px;
+      height: 18px;
+      opacity: .7
+    }
+
+    .btn.primary {
+      background: var(--berry);
+      border-color: transparent;
+      min-height: 72px;
+      font-size: 17px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .25)
+    }
+
+    .btn.primary:hover {
+      background: #B94476
+    }
+
+    .btn.primary small {
+      color: rgba(255, 255, 255, .85)
+    }
+
+    footer {
+      margin-top: 32px;
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: var(--mint);
+      opacity: .85
+    }
+
+    @media (prefers-reduced-motion:no-preference) {
+
+      .avatar,
+      h1,
+      .role,
+      .handle,
+      .tagline,
+      .btn,
+      footer {
+        animation: up .6s ease both
+      }
+
+      h1 {
+        animation-delay: .05s
+      }
+
+      .role {
+        animation-delay: .1s
+      }
+
+      .handle {
+        animation-delay: .12s
+      }
+
+      .tagline {
+        animation-delay: .16s
+      }
+
+      .btn:nth-child(1) {
+        animation-delay: .2s
+      }
+
+      .btn:nth-child(2) {
+        animation-delay: .27s
+      }
+
+      .btn:nth-child(3) {
+        animation-delay: .34s
+      }
+
+      .btn:nth-child(4) {
+        animation-delay: .41s
+      }
+
+      footer {
+        animation-delay: .5s
+      }
+
+      @keyframes up {
+        from {
+          opacity: 0;
+          transform: translateY(14px)
+        }
+
+        to {
+          opacity: 1;
+          transform: none
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+
+    <!-- FOTO: salve a foto dela como foto-kesia.jpg na mesma pasta. Sem a foto, aparece o "K". -->
+    <div class="avatar">
+      <div class="avatar-in">K<img src="foto-kesia.jpg" alt="Foto da nutricionista Késia Gomes" onerror="this.remove()">
+      </div>
+    </div>
+
+    <h1>Késia Gomes</h1>
+    <p class="role">Nutricionista</p>
+    <p class="handle">@nutricomk</p>
+    <!-- TROCAR se quiser outra frase de apresentação -->
+    <p class="tagline">Nutrição com ciência e cuidado, sem achismo.</p>
+
+    <nav aria-label="Links principais">
+
+      <!-- 1) AGENDAR: troque 55DDDNUMERO pelo WhatsApp dela (55 + DDD + número, só números) -->
+      <a class="btn primary"
+        href="https://wa.me/21990837788?text=Ol%C3%A1%2C%20K%C3%A9sia!%20Vim%20pelo%20Instagram%20e%20quero%20agendar%20uma%20consulta."
+        target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <rect x="3.5" y="5" width="17" height="15.5" rx="3" />
+          <path d="M8 3v4M16 3v4M3.5 10h17" />
+        </svg>
+        <span class="txt">Agendar consulta<small>Chame no WhatsApp</small></span>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+
+      <!-- 2) INSTAGRAM -->
+      <a class="btn" href="https://www.instagram.com/nutricomk/" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+          <circle cx="12" cy="12" r="4" />
+          <circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none" />
+        </svg>
+        <span class="txt">Instagram<small>Conteúdos e dicas do dia a dia</small></span>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+
+
+      <!-- ENDEREÇO: troque o texto da small e o ENDERECO_AQUI no link (use + no lugar de espaço) -->
+      <a class="btn" href="https://maps.app.goo.gl/1gbXoHkCSpTr2zJt9" target="_blank"
+        rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z" />
+          <circle cx="12" cy="9.5" r="2.5" />
+        </svg>
+        <span class="txt">Como chegar<small>R. Cel. Alberto de Melo, 154 - Vila Centenario, Duque de Caxias - RJ, 25025-530</small></span>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+      <!-- 3) MATERIAL GRATUITO: troque o href pelo link do e-book / guia (ou apague este bloco) -->
+      <!--<a class="btn" href="#" target="_blank" rel="noopener">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v16H6.5A1.5 1.5 0 0 0 5 20.5v-16z"/><path d="M5 20.5A1.5 1.5 0 0 0 6.5 22H19v-3"/></svg>
+      <span class="txt">Material gratuito<small>Guia para começar com a alimentação</small></span>
+      <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </a>-->
+
+      <!-- 4) COMO FUNCIONA A CONSULTA: troque o href (página, PDF ou WhatsApp) ou apague este bloco -->
+      <!--<a class="btn" href="#" target="_blank" rel="noopener">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.8v.1"/></svg>
+      <span class="txt">Como funciona a consulta<small>Valores, formato e dúvidas</small></span>
+      <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </a>-->
+
+    </nav>
+
+    <!-- TROCAR: coloque o CRN real -->
+    <footer>Késia Gomes · Nutricionista · CRN-26100780/P</footer>
+
+  </main>
+</body>
+
+</html>
